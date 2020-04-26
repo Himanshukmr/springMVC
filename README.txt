@@ -17,3 +17,28 @@ Note : Dispatcher Servlet is also called Front Controller
 //Full Flow : 
 
 Request from Client --> Request received by Dispatcher Servlet --> Search for the Controller which contain URI i.e /login ---> Execute the method --> Return Response
+
+
+-------------------------------------------------------------------
+
+
+Explanation of the below  snippet : 
+===================================
+	 <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/views/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+    
+   Here, prefix means ==> /WEB-INF/views/
+   
+   and suffix means ===> .jsp
+   
+   so what happens here if we suppose return "login" from a method of a Controller
+   then it will behave as :	/WEB-INF/views/login.jsp 
+   
+   So in this way whatever the .jsp will contain it will be responded back to the client
